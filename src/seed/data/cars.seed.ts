@@ -1,0 +1,31 @@
+import { Car } from 'src/cars/interfaces/car.interface';
+import { v7 as uuidv7 } from 'uuid';
+
+export const CARS_SEED: Car[] = [
+  { id: uuidv7(), marca: 'Toyota', model: 'Corolla', year: 2024 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Yaris', year: 2023 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Hilux', year: 2022 },
+  { id: uuidv7(), marca: 'Toyota', model: 'RAV4', year: 2021 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Prius', year: 2020 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Camry', year: 2019 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Land Cruiser', year: 2018 },
+  { id: uuidv7(), marca: 'Toyota', model: '86', year: 2017 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Supra', year: 2016 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Sienna', year: 2015 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Tacoma', year: 2014 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Tundra', year: 2013 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Sequoia', year: 2012 },
+  { id: uuidv7(), marca: 'Toyota', model: '4Runner', year: 2011 },
+  { id: uuidv7(), marca: 'Toyota', model: 'FJ Cruiser', year: 2010 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Avalon', year: 2009 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Matrix', year: 2008 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Solara', year: 2007 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Echo', year: 2006 },
+  { id: uuidv7(), marca: 'Toyota', model: 'MR2', year: 2005 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Celica', year: 2004 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Tercel', year: 2003 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Paseo', year: 2002 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Starlet', year: 2001 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Corona', year: 2000 },
+  { id: uuidv7(), marca: 'Toyota', model: 'Cressida', year: 1999 },
+];

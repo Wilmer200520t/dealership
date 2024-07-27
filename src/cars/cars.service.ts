@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { Car } from './interfaces/car.interface';
-import { v7 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class CarsService {
@@ -53,5 +52,9 @@ export class CarsService {
     } catch (error) {
       return error.message;
     }
+  }
+
+  fillCarsWithSeed(car: Car[]) {
+    this.cars = car;
   }
 }
