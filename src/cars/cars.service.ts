@@ -5,36 +5,12 @@ import { v7 as uuidv4 } from 'uuid';
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
-    {
-      id: uuidv4(),
-      marca: 'toyota',
-      model: 'corolla',
-      year: 2020,
-    },
-    {
-      id: uuidv4(),
-      marca: 'ford',
-      model: 'fiesta',
-      year: 2019,
-    },
-    {
-      id: uuidv4(),
-      marca: 'bmw',
-      model: 'serie 3',
-      year: 2021,
-    },
-    {
-      id: uuidv4(),
-      marca: 'audi',
-      model: 'a4',
-      year: 2022,
-    },
-    {
-      id: uuidv4(),
-      marca: 'mercedes',
-      model: 'clase c',
-      year: 2023,
-    },
+    //{
+    //  id: uuidv4(),
+    //  marca: 'toyota',
+    //  model: 'corolla',
+    //  year: 2020,
+    //}
   ];
 
   public getCars() {
