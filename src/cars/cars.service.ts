@@ -1,34 +1,36 @@
 import { Injectable } from '@nestjs/common';
+import { Car } from './interfaces/car.interface';
+import { v7 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class CarsService {
-  private cars = [
+  private cars: Car[] = [
     {
-      id: 0,
+      id: uuidv4(),
       marca: 'toyota',
       model: 'corolla',
       year: 2020,
     },
     {
-      id: 1,
+      id: uuidv4(),
       marca: 'ford',
       model: 'fiesta',
       year: 2019,
     },
     {
-      id: 2,
+      id: uuidv4(),
       marca: 'bmw',
       model: 'serie 3',
       year: 2021,
     },
     {
-      id: 3,
+      id: uuidv4(),
       marca: 'audi',
       model: 'a4',
       year: 2022,
     },
     {
-      id: 4,
+      id: uuidv4(),
       marca: 'mercedes',
       model: 'clase c',
       year: 2023,
@@ -39,8 +41,8 @@ export class CarsService {
     return this.cars;
   }
 
-  public getCarById(id: number) {
-    const carFind = this.cars.find((car) => car.id === id);
+  public getCarById(id: string) {
+    const carFind = this.cars.find((car) => car.id == id);
     return carFind;
   }
 
@@ -53,22 +55,27 @@ export class CarsService {
     }
   }
 
-  public updateCar(id: number, body: any) {
+  public updateCar(id: string, body: any) {
     try {
       const carIndex = this.cars.findIndex((car) => car.id === id);
-      this.cars[carIndex] = body;
-      return true;
+      if (!carIndex) new Error('Car not found');
+      if (body.marca) this.cars[carIndex].marca = body.marca;
+      if (body.model) this.cars[carIndex].model = body.model;
+      if (body.year) this.cars[carIndex].year = body.year;
+      return this.getCarById(id);
     } catch (error) {
       return error;
     }
   }
 
-  public deleteCar(id: number) {
+  public deleteCar(id: string) {
     try {
+      if (!this.getCarById(id)) throw new Error('Car not found');
+
       this.cars = this.cars.filter((car) => car.id !== id);
       return true;
     } catch (error) {
-      return error;
+      return error.message;
     }
   }
 }
